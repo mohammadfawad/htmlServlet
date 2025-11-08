@@ -4,6 +4,7 @@
  */
 package com.htmlservelet.app;
 
+import com.htmlservelet.app.model.Customer;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -31,6 +32,13 @@ public class CustomerServlet extends HttpServlet {
         String firstName = req.getParameter("firstName");
         String lastName = req.getParameter("lastName");
         String email = req.getParameter("email");
+        
+        Customer customer =  new Customer();
+        customer.setId((long)id);
+        customer.setFirstName(firstName);
+        customer.setLastName(lastName);
+        customer.setEmail(email);
+        
 
         try (PrintWriter out = resp.getWriter()) {
 
@@ -41,10 +49,10 @@ public class CustomerServlet extends HttpServlet {
             );
 
             PreparedStatement ps = con.prepareStatement("INSERT INTO customer VALUES (?, ?, ?, ?)");
-            ps.setInt(1, id);
-            ps.setString(2, firstName);
-            ps.setString(3, lastName);
-            ps.setString(4, email);
+            ps.setLong(1, customer.getId());
+            ps.setString(2, customer.getFirstName());
+            ps.setString(3, customer.getLastName());
+            ps.setString(4, customer.getEmail());
             ps.executeUpdate();
 
             out.println("Record Inserted Successfully!");
