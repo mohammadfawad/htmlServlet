@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <h1>Welcome To Servlet World!</h1>
+         <h2>Enter your name:</h2>
+        <form action="helloServlet" method="get">
+            <input type="text" name="name" placeholder="Your name" />
+            <button type="submit">Say Hello</button>
+        </form>
+         <hr><!-- Database Record Insert -->
+         <h1>Insert Customer Record into Database</h1>
+         <form action="CustomerServlet" method="post">
+             Enter Employee ID: <input type="text" name="eid"><br>
+             Enter Employee First Name: <input type="text" name="firstName"><br>
+             Enter Employee Last Name: <input type="text" name="lastName"><br>
+             Enter Employee Email: <input type="text" name="email"><br>
+             <input type="submit" value="Save">
+         </form>
+
+    </body>
+</html>

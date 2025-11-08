@@ -1,0 +1,5 @@
+com\htmlservelet\app\JakartaRestConfiguration.class
+com\htmlservelet\app\HelloServlet.class
+com\htmlservelet\app\resources\JakartaEE11Resource.class
+com\htmlservelet\app\model\Customer.class
+com\htmlservelet\app\CustomerServlet.class
